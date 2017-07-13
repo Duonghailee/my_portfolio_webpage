@@ -20,6 +20,57 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="JS/script.js"></script>
 
+    <script>
+        // create getXMLHttpRequest object
+        function getXMLHTTPRequest() {
+            try {
+                req = new XMLHttpRequest();
+            } catch (err1) {
+                try {
+                    req = new ActiveXObject("Msxm12.XMLHTTP");
+                } catch (err2) {
+                    try {
+                        req = new ActiveXObject("Microsoft.XMLHTTP");
+                    } catch (err3) {
+                        req = false;
+                    }
+                }
+            }
+            return req;
+        }
+
+        //call this object http
+        var http = getXMLHTTPRequest();
+
+
+        //getting server time
+        function getServerTime() {
+            var myurl = 'telltimeXML.php';
+            myRand = parseInt(Math.random() * 9999999999999999);
+            console.log("testtt");
+            //adding random number to url to avoid cache problem
+            modurl = myurl + "?rand=" + myRand;
+            // open serer and make it asynchonoursly
+            http.open("GET", modurl, true);
+            // seting up the  call back function, after receive response from the server
+            http.onreadystatechange = useHttpResponse;
+            http.send(null);
+
+        }
+
+        function useHttpResponse() {
+            if (http.readyState == 4) {
+                if (http.status == 200) {
+                    var timeValue = http.responseXML.getElementsByTagName("timenow")[0];
+                    document.getElementById('server_time').innerHTML = "<h4>" + timeValue.childNodes[0].nodeValue + "</h4>";
+                }
+                console.log("test");
+            }
+        }
+    </script>
+
+
+
     <title>Welcome to DuongHailee's personal webpage</title>
 </head>
 
@@ -27,7 +78,7 @@
 
 <!-- naviagion bar -->
 
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" onload="getServerTime()">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -50,7 +101,6 @@
             </div>
         </div>
     </nav>
-
 
 
 
@@ -409,6 +459,11 @@
         <h4 id="show_weather">
             <button id="get_weather" onclick="get_weather()" type="submit">Get local temperature now</button>
         </h4>
+        <hr style="color:blue">
+        <button id="get_serverTime" onclick="getServerTime()" type="submit">Get Server time now</button>
+        <div id="server_time">
+        </div>
+
     </div>
 
 
