@@ -1,0 +1,177 @@
+/* 
+style the navigation bar */
+
+.navbar {
+    margin-bottom: 0;
+    background-color: rgb(0, 117, 196) !important;
+    color: black;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+}
+
+.navbar li a,
+.navbar .navbar-brand {
+    color: black !important;
+}
+
+.navbar-nav li a:hover,
+.navbar-nav li.active a {
+    color: black !important;
+    background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: black !important;
+}
+
+
+/* 
+carousel */
+
+.carousel-inner img {
+    width: 100%;
+    /* Set width to 100% */
+    margin: auto;
+}
+
+#profile {
+    width: 15%;
+    border-radius: 50%;
+}
+
+.carousel-caption {
+    padding-bottom: 60px !important;
+    color: #fff !important;
+}
+
+@media (max-width: 240px) {
+    .carousel-caption {
+        display: none;
+        /* Hide the carousel text when the screen is less than 240 pixels wide  */
+    }
+}
+
+
+/* styling for social media button */
+
+.col-sm-5 .fa {
+    display: inline-block;
+    padding: 5px;
+    font-size: 21px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 17px 6px;
+    border-radius: 50%;
+}
+
+.col-sm-5 .fa:hover {
+    opacity: 0, 7;
+}
+
+.col-sm-5 .fa-facebook {
+    background: rgb(60, 90, 150);
+    color: white;
+}
+
+.col-sm-5 .fa-linkedin {
+    background: rgb(17, 120, 119);
+    color: white;
+}
+
+.col-sm-5 .fa-instagram {
+    background: rgb(231, 18, 40);
+    color: white;
+}
+
+
+/* styling text in the center */
+
+.btn-outline-primary {
+    padding: 20px 20px 20px 20px !important;
+}
+
+
+/*styling contact form */
+
+.container-fluid {
+    /* adding more space */
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.bg-3 {
+    background: rgb(117, 234, 228);
+    opacity: 0.7;
+    color: black;
+}
+
+.bg-4 {
+    background: rgb(107, 191, 63);
+    opacity: 0.9;
+    color: black;
+}
+
+.mySlides {
+    display: none;
+}
+
+
+/* rotating image 
+.rotating-90deg {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(9deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+*/
+
+@media screen and (max-width: 320px) {
+    #suomea {
+        font-size: 0.5em;
+    }
+}
+
+
+/*
+slide animation */
+
+.slideanim {
+    visibility: hidden;
+}
+
+.slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}

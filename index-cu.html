@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to DuongHailee's personal webpage</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="DuongHailee">
+    <meta name="keywords" content="portfolio, full-stack developer, metropolia UAS">
+    <meta name="author" content="DuongHaiLee, Jacky">
+    <link href="Styles/style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="JS/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+
+    <!-- Left side naviagion bar -->
+    <div id="leftNav" class="sideNav">
+        <!-- close X button -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times; 
+            </a>
+
+        <a href="index.html#About" onclick="closeNav()">About</a>
+        <a href="Skills.html">Skills</a>
+        <a href="Project.html">Projects</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="index.html#contact-form" onclick=closeNav()>Contact</a>
+        <a href="Suomkesi.html">Suomeksi</a>
+
+    </div>
+
+
+
+    <!-- menu navigation activatedd when user click -->
+    <div id=top_menu>
+        <span id="menu" onclick="openNav()">&#9776; Menu</span>
+        <a href="http://www.metropolia.fi" target="blank"><img id="metro_logo" src="Images/metro.png"></a>
+    </div>
+
+    <!-- full background -->
+    <div id="About" class="background">
+        <div id="text_center" class="container">
+            <!-- profile picture -->
+            <a href="https://www.linkedin.com/in/duonghai-lee-81a205128/" target="_blank" alt="go to my linkedn"><img id="profile_pic" src="Images/profile.jpg" class="img-circle" alt="profile" title="go to my linkedn"></a>
+
+            <p> Hi! I am a self-taught full-stack developer</p>
+            <p> In Espoo, Finland</p>
+        </div>
+    </div>
+
+
+    <!-- contact form -->
+
+    <div id="contact-form" class="container-fluid bg-4 ">
+        <h2 class="text-center">Contact</h2>
+        <div class="row">
+            <div class="col-sm-5">
+                <p>Contact me and I will get back to you asap.</p>
+                <p><span class="glyphicon glyphicon-map-marker"></span> Espoo, Finland</p>
+                <p><span class="glyphicon glyphicon-phone"></span> +358 409333693</p>
+                <p><span class="glyphicon glyphicon-envelope"></span> duonghailee@gmail.com</p>
+
+                <!-- social media link -->
+                <a href="https://www.facebook.com/duonghailee" class="fa fa-facebook"></a>
+                <a href="https://www.linkedin.com/in/duonghai-lee-81a205128" class="fa fa-linkedin"></a>
+                <a href="https://www.instagram.com/duonghailee" class="fa fa-instagram"></a>
+            </div>
+            <div class="col-sm-7">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="name" placeholder="Name" type="text" maxlength="50" required="required">
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="email" name="email" placeholder="Email" maxlength="30" type="email" required="required">
+                    </div>
+                </div>
+                <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5" required="required"></textarea><br>
+                <div class="row">
+                    <div class="col-sm-12 form-group">
+                        <button class="btn btn-default pull-center" type="submit" action="comment.php" target="_blank">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
