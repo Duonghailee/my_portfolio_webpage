@@ -13,63 +13,13 @@
     <meta name="author" content="DuongHaiLee, Jacky, Hailee">
     <meta name="keywords" content="portfolio, full-stack developer, metropolia UAS">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Styles/style.css" type="text/css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Styles/style.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="JS/script.js"></script>
-
-    <script>
-        // create getXMLHttpRequest object
-        function getXMLHTTPRequest() {
-            try {
-                req = new XMLHttpRequest();
-            } catch (err1) {
-                try {
-                    req = new ActiveXObject("Msxm12.XMLHTTP");
-                } catch (err2) {
-                    try {
-                        req = new ActiveXObject("Microsoft.XMLHTTP");
-                    } catch (err3) {
-                        req = false;
-                    }
-                }
-            }
-            return req;
-        }
-
-        //call this object http
-        var http = getXMLHTTPRequest();
-
-
-        //getting server time
-        function getServerTime() {
-            var myurl = 'telltimeXML.php';
-            myRand = parseInt(Math.random() * 9999999999999999);
-            console.log("testtt");
-            //adding random number to url to avoid cache problem
-            modurl = myurl + "?rand=" + myRand;
-            // open serer and make it asynchonoursly
-            http.open("GET", modurl, true);
-            // seting up the  call back function, after receive response from the server
-            http.onreadystatechange = useHttpResponse;
-            http.send(null);
-
-        }
-
-        function useHttpResponse() {
-            if (http.readyState == 4) {
-                if (http.status == 200) {
-                    var timeValue = http.responseXML.getElementsByTagName("timenow")[0];
-                    document.getElementById('server_time').innerHTML = "<h4>" + timeValue.childNodes[0].nodeValue + "</h4>";
-                }
-                console.log("test");
-            }
-        }
-    </script>
-
-
 
     <title>Welcome to DuongHailee's personal webpage</title>
 </head>
@@ -103,7 +53,6 @@
     </nav>
 
 
-
     <!-- about me -->
     <div id="about">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -118,16 +67,16 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img src="Images/northen.jpg" alt="northen light" width="1200" height="800">
+                    <img src="http://users.metropolia.fi/~hail/Images/northen.jpg" alt="northen light" width="1200" height="800">
                     <div class="carousel-caption">
-                        <img id="profile" src="Images/profile.jpg" alt="profile" class="img-circle img-responsive">
+                        <img id="profile" src="http://users.metropolia.fi/~hail/Images/profile.jpg" alt="profile" class="img-circle img-responsive">
                         <h4>Hi there, I am Jacky</h4>
                         <p>I am a BBA graduate from Finland</p>
                     </div>
                 </div>
 
                 <div class="item">
-                    <img src="Images/IT.jpg" alt="second degree" width="1200" height="800">
+                    <img src="http://users.metropolia.fi/~hail/Images/IT.jpg" alt="second degree" width="1200" height="800">
                     <div class="carousel-caption">
                         <h4>IT engineer is my second degree</h4>
                         <p>I have finished about 80% of my second degree with GPA 4.5</p>
@@ -135,7 +84,7 @@
                 </div>
 
                 <div class="item">
-                    <img src="Images/physics.jpg" alt="subjects" width="1200" height="800">
+                    <img src="http://users.metropolia.fi/~hail/Images/physics.jpg" alt="subjects" width="1200" height="800">
                     <div class="carousel-caption">
                         <h4>Physics, Math and IT</h4>
                         <p>They are my favorite subjects at school</p>
@@ -143,7 +92,7 @@
                 </div>
 
                 <div class="item">
-                    <img src="Images/music.jpg" alt="leisure" width="1200" height="800">
+                    <img src="http://users.metropolia.fi/~hail/Images/music.jpg" alt="leisure" width="1200" height="800">
                     <div class="carousel-caption">
                         <h4 style="color: black">When I don't code</h4>
                         <p style="color:black">I pracice martial art and listen to music in my walkman</p>
@@ -165,8 +114,6 @@
     </div>
 
 
-
-
     <!-- Skills part , A link which can downloaded CV in pdf and word format -->
     <div id="skills" class="container-fluid bg-success">
         <h3 class="text-primary text-center">My Skills </h3>
@@ -174,20 +121,20 @@
             <div class="col-xs-4 web">
 
                 <p>Web Development</p>
-                <img src="Images/web.png" class="img-responsive img-rounded center-block" width="128" height="128">
+                <img src="http://users.metropolia.fi/~hail/Images/web.png" class="img-responsive img-rounded center-block" width="128" height="128">
 
             </div>
             <div class="col-xs-4 data-mining">
 
                 <p>Data structure and alogorithm</p>
-                <img src="Images/coding.png" class="img-responsive img-rounded center-block" width="128" height="128">
+                <img src="http://users.metropolia.fi/~hail/Images/coding.png" class="img-responsive img-rounded center-block" width="128" height="128">
 
             </div>
 
             <div class="col-xs-4 real-time">
 
                 <p>Unix/Linux, Real-time system</p>
-                <img src="Images/linux.jpg" class="img-responsive img-rounded center-block" width="128" height="128">
+                <img src="http://users.metropolia.fi/~hail/Images/linux.jpg" class="img-responsive img-rounded center-block" width="128" height="128">
 
             </div>
         </div>
@@ -218,10 +165,6 @@
     </div>
 
 
-
-
-
-
     <!-- Project show case -->
     <div id="portfolio" class="container-fluid bg-4">
         <h3 class="text-primary text-center">My Projects </h3>
@@ -229,7 +172,7 @@
             <div class="col-sm-3 text-center">
                 <div id="conversion_webapp" class="thumbnail">
                     <a target="_blank" href="https://github.com/Duonghailee/Unit_Conversion_web_application">
-                        <img src="Images/webapp.png" class="img-thumbnail img-responsive" width="192" height="200" alt="webapp project">
+                        <img src="http://users.metropolia.fi/~hail/Images/webapp.png" class="img-thumbnail img-responsive" width="192" height="200" alt="webapp project">
                     </a>
                     <div class="caption">
                         <h3>Conversion webapp</h3>
@@ -241,7 +184,7 @@
             <div class="col-sm-3 text-center">
                 <div class="thumbnail">
                     <a id="sql_database" target="_blank" href="https://github.com/Duonghailee/DatabaseProject">
-                        <img src="Images/sql.png" class="img-thumbnail img-responsive" width="192" height="200" alt="database project">
+                        <img src="http://users.metropolia.fi/~hail/Images/sql.png" class="img-thumbnail img-responsive" width="192" height="200" alt="database project">
                     </a>
                     <div class="caption">
                         <h3>latee box SQL database</h3>
@@ -253,7 +196,7 @@
             <div class="col-sm-3 text-center">
                 <div class="thumbnail">
                     <a id="awas_project" target="_blank" href="https://github.com/Duonghailee/awas-project">
-                        <img src="Images/awas.png" class="img-thumbnail img-responsive" width="192" height="200" alt="awas project">
+                        <img src="http://users.metropolia.fi/~hail/Images/awas.png" class="img-thumbnail img-responsive" width="192" height="200" alt="awas project">
                     </a>
                     <div class="caption">
                         <h3>AWAS WebApp security</h3>
@@ -265,7 +208,7 @@
             <div class="col-sm-3 text-center">
                 <div class="thumbnail">
                     <a id="worm_game" target="_blank" href="https://github.com/Duonghailee/JAVA-MOOC-HELSINKI-UNI/tree/master/2013-OOProgrammingWithJava-PART2/week12-week12_49.WormGame/src/wormgame">
-                        <img src="Images/worm.png" class="img-thumbnail img-responsive" width="192" height="200" alt="worm game project">
+                        <img src="http://users.metropolia.fi/~hail/Images/worm.png" class="img-thumbnail img-responsive" width="192" height="200" alt="worm game project">
                     </a>
                     <div class="caption">
                         <h3>Nokia worm mini game</h3>
@@ -276,8 +219,6 @@
 
         </div>
     </div>
-
-
 
 
     <!-- Gallery -->
@@ -293,7 +234,7 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img src="Images/oittaa.jpg" alt="northen light" width="1200" height="700">
+                    <img src="http://users.metropolia.fi/~hail/Images/oittaa.jpg" alt="northen light" width="1200" height="700">
                     <div class="carousel-caption">
                         <h4>Bolominjärvi lake, Espoo, Finland</h4>
                         <p>This peaceful photo taken by me in July, 2017 when our family went there for camping and swimming</p>
@@ -301,7 +242,7 @@
                 </div>
 
                 <div class="item">
-                    <img src="Images/latvia.jpg" alt="second degree" width="1200" height=800>
+                    <img src="http://users.metropolia.fi/~hail/Images/latvia.jpg" alt="second degree" width="1200" height=800>
                     <div class="carousel-caption">
                         <h4>Riga, Latvia, summer 2017</h4>
                         <p>One of the best places to visit in Riga, capital of Latvia</p>
@@ -309,7 +250,7 @@
                 </div>
 
                 <div class="item">
-                    <img src="Images/bergen.jpg" alt="subjects" width="1200" height="800">
+                    <img src="http://users.metropolia.fi/~hail/Images/bergen.jpg" alt="subjects" width="1200" height="800">
                     <div class="carousel-caption">
                         <h4>Bergen- west of Norway</h4>
                         <p>I had the opportunity to visit this wonderful place in summer 2017</p>
@@ -331,7 +272,6 @@
         </div>
 
     </div>
-
 
 
     <!-- contact form -->
@@ -418,23 +358,22 @@
                 var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
                 var marker = new google.maps.Marker({
-                    position: myCenter,
+                    position: myCenter
                 });
 
                 marker.setMap(map);
             }
 
-            google.maps.event.addDomListener(window, 'load', initialize);
+            google.maps.event.addDomListener(window, "load", initialize);
         </script>
     </div>
-
 
 
     <!-- suomeksi -->
     <div id="suomeksi" class="container-fluid bg-primary">
         <div class="row slideanim">
             <div class="col-xs-4">
-                <img src="hailee.jpg" class="img-responsive img-rounded" width="320" height="320">
+                <img src="http://users.metropolia.fi/~hail/hailee.jpg" class="img-responsive img-rounded" width="320" height="320">
             </div>
             <div class="col-xs-8">
                 <p id="suomea">Olen 26-vuotias Espoon asuva opiskelija, nimeni on Hai. Valmistuin taloushallinnon tradenomiksi Lamkista vuonna 2014. Opinnäytetyöni tein aiheesta "Pankin markkinointi hallinta". Opiskeluaikanani toimin osa-aikaisena varaston työntekijänä
@@ -459,9 +398,11 @@
         <h4 id="show_weather">
             <button id="get_weather" onclick="get_weather()" type="submit">Get local temperature now</button>
         </h4>
-        <hr style="color:blue">
-        <button id="get_serverTime" onclick="getServerTime()" type="submit">Get Server time now</button>
-        <div id="server_time">
+        <div id="status" class="col-xs-12">
+        </div>
+
+        <div id="weatherAnimate" class="col-xs-12">
+            <img id="image" src=""></img>
         </div>
 
     </div>
@@ -471,27 +412,29 @@
     <script>
         var test = document.getElementById("conversion_webapp");
         // this handler will be executed whenever user move over the first project
-        test.addEventListener("mouseover", function(event) {
-            // highlight the mouseover target
-            event.target.style.color = "Blue";
+        test.addEventListener(
+            "mouseover",
+            function(event) {
+                // highlight the mouseover target
+                event.target.style.color = "Blue";
 
-            // reset the color after a short delay
-            setTimeout(function() {
-                event.target.style.color = "";
-            }, 500);
-        }, false);
+                // reset the color after a short delay
+                setTimeout(function() {
+                    event.target.style.color = "";
+                }, 500);
+            },
+            false
+        );
     </script>
 
 
-
-
-
     <!-- footer -->
-    <footer class="container-fluid text-center">
-        <a href="#about" title="Back To Top">
+    <footer class="container-fluid text-center slideanim">
+        <a href="#myPage" title="Back To Top">
             <span class="glyphicon glyphicon-chevron-up"></span>
         </a>
         <p> Thank again for visiting</p>
+        <p>Reference: Thanks to Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
     </footer>
 
 
