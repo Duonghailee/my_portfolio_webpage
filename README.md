@@ -2,7 +2,7 @@
 A personal webpage which you can find more about me
 
 # Demo
-Demo app here: [https://codepen.io/duonghailee/full/weNOYv/](http://duonghailee.github.io/my_portfolio_webpage) 
+Demo app here: [https://codepen.io/duonghailee/full/weNOYv/](https://codepen.io/duonghailee/full/weNOYv/) 
 
 # Technology
 Built in HTML, CSS, JS and jQuery
